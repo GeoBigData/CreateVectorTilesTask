@@ -1,5 +1,12 @@
-# Users GitHub configs
+# User's git config file
 .gitconfig
+
+# Test mount directories
+test-mnt/input/*
+test-mnt/output/*
+test-mnt/status.json
+!test-mnt/input/.git-keep
+!test-mnt/output/.git-keep
 
 # Created by .ignore support plugin (hsz.mobi)
 ### macOS template

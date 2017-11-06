@@ -1,0 +1,43 @@
+{
+  "name": "CreateVectorTiles",
+  "version": "0.1.0",
+  "description": "Creates vector tiles from any valid OGR data source.",
+  "properties": {
+    "isPublic": false,
+    "timeout": 7200
+  },
+  "inputPortDescriptors": [
+    {
+      "name": "data",
+      "type": "directory",
+      "description": "The S3 location containing all data sources to be added as vector tile layers. NOTE: All input layers must be in EPSG:4326."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "(Optional) The name of the final .mbtiles file (if explode = 'false') or tile directory (if explode = 'true'). Defaults to 'output'",
+      "defaultValue": "output"
+    },
+    {
+      "name": "layers",
+      "type": "string",
+      "description": "(Optional) A mapping of input file names to layer names as they should appear in the final vector tiles file. This must be provided as a comma-separated list of mappings of the form 'filename_1=layer_name1,filename_2=layer_name_2'. Any input files not present in the mapping will be named based on their filename.",
+      "dataType": "mapping",
+      "defaultValue": ""
+    },
+    {
+      "name": "skip_errors",
+      "type": "string",
+      "description": "(Optional) Whether to skip any layers that throw errors or to fail the entire task. Allowed values are 'true' and 'false'. Default is 'true'.",
+      "dataType": "boolean",
+      "defaultValue": "true"
+    }
+  ],
+  "outputPortDescriptors": [
+    {
+      "name": "data",
+      "type": "directory",
+      "description": "The S3 prefix for the final vector tiles. If explode = 'false' then the results will be at <outputPortDescriptors.data>/<inputPortDescriptors.name>.mbtiles. If explode = 'true' then results will be in <outputPortDescriptors.data>/<inputPortDescriptors.name>."
+    }
+  ]
+}
