@@ -1,0 +1,8 @@
+version: '2'
+services:
+  test:
+    image: create-vector-tiles:latest
+    volumes:
+      - ${PWD}/src:/usr/src/create_vector_tiles:rw
+      - ${PWD}/test-mnt:/mnt/work:rw
+    command: python /usr/src/create_vector_tiles/create_vector_tiles.py
