@@ -7,6 +7,7 @@ test-mnt/output/*
 test-mnt/status.json
 !test-mnt/input/.git-keep
 !test-mnt/output/.git-keep
+!test-mnt/input/ports.template.json
 
 # Created by .ignore support plugin (hsz.mobi)
 ### macOS template

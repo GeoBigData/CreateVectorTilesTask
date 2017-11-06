@@ -1,0 +1,5 @@
+{
+  "name": "my-vt-file",
+  "layers": "file-name=new-layer-name,file_name_2=new_layer_name_2",
+  "skip_errors": "true"
+}
